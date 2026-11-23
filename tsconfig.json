@@ -1,0 +1,7 @@
+{
+  "extends": "./apps/web/tsconfig.json",
+  "compilerOptions": {
+    "paths": { "@/*": ["./apps/web/*"], "@bankledger/contracts": ["./packages/shared-schemas/contracts.ts"] }
+  },
+  "include": ["apps/web/**/*.ts", "apps/web/**/*.tsx", "prisma/**/*.ts", "tests/**/*.ts", "packages/**/*.ts"]
+}

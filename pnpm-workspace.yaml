@@ -1,0 +1,11 @@
+packages:
+  - apps/web
+nodeLinker: hoisted
+ignoredOptionalDependencies:
+  - sharp
+  - "@napi-rs/canvas"
+onlyBuiltDependencies:
+  - "@prisma/client"
+  - "@prisma/engines"
+  - esbuild
+  - prisma

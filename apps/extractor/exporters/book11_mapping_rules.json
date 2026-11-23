@@ -1,0 +1,51 @@
+{
+  "parties": {
+    "ach-credit:alg distr comp 1 edi paymnt": {
+      "name": "Alg Distribution Company",
+      "split": "Rebate Income"
+    },
+    "ach-credit:nlp cm llc accts rece": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable"
+    },
+    "ach-credit:paychex tps taxes": {
+      "name": null,
+      "split": "Payroll Tax"
+    },
+    "ach-debit:georgia its tax ga tx pymt": {
+      "name": "Georgia ITS Tax",
+      "split": null
+    },
+    "ach-debit:matador distribu matador di": {
+      "name": "Matador Distributors",
+      "split": "Merchandise Inventory"
+    },
+    "ach-debit:nlp cm llc accts rece": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable"
+    },
+    "ach-debit:payroll service": {
+      "name": "Payroll Service",
+      "split": "Payroll Expenses"
+    },
+    "ach-debit:rolling frito la snacks": {
+      "name": "Frito Lay",
+      "split": "Merchandise Inventory"
+    },
+    "card:pmt south elm st foo commerce ga": {
+      "name": "South ELM ST Food",
+      "split": "Merchandise Inventory"
+    }
+  },
+  "narrations": {
+    "overdraft chrg rev": {
+      "name": "Overdraft Charge",
+      "split": "Bank Service Charges"
+    }
+  },
+  "transfers": {
+    "3510c13b2c9c14bcbd37b3aaf8afba24d62979cd04e0a14e153e85b1842a8280": "Coam 8137",
+    "4c5245ff2ff222393f7dc0bf719d4f64700199187a6c7afdc23795c661c63b13": "Lottery 8145",
+    "674e5033853284ca6dd357b5a739700c16fe9435c29d1c6ca4a12a493a7425d7": "St Joseph Enterprises"
+  }
+}

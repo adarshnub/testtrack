@@ -1,0 +1,496 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Direction {
+  IN
+  OUT
+}
+
+enum Category {
+  CASH_DEPOSIT
+  ACH_CREDIT
+  OTHER_DEPOSIT
+  ACH_PAYMENT
+  CARD_PAYMENT
+  BANK_FEE
+  TRANSFER_IN
+  TRANSFER_OUT
+  CLEARED_CHECK
+  OTHER_WITHDRAWAL
+  UNKNOWN
+}
+
+enum JobState {
+  QUEUED
+  INSPECTING
+  EXTRACTING
+  NORMALIZING
+  VALIDATING
+  APPLYING_RULES
+  COMPLETED
+  NEEDS_REVIEW
+  UNSUPPORTED
+  FAILED
+}
+
+enum ImportAction {
+  IMPORT
+  MATCH_EXISTING
+  CHECK_DETAILS_REQUIRED
+  REVIEW
+  SKIP
+}
+
+enum ReviewDecision {
+  AUTO
+  REVIEW
+  SKIP
+  MATCH_EXISTING
+}
+
+enum RuleScope {
+  GLOBAL
+  CLIENT
+  BANK_ACCOUNT
+}
+
+enum MatchMethod {
+  EXACT
+  CONTAINS
+  STARTS_WITH
+}
+
+enum QBType {
+  DEPOSIT
+  CHECK
+  TRANSFER
+}
+
+enum MappingSource {
+  RULE
+  FALLBACK
+  MANUAL
+  PRIOR
+}
+
+enum ReconciliationStatus {
+  PASSED
+  FAILED
+  UNVERIFIED
+}
+
+enum ExportFormat {
+  EXCEL
+  IIF
+}
+
+enum ExportStatus {
+  UNKNOWN
+  DOWNLOADED
+  IMPORTED
+  IMPORT_FAILED
+}
+
+model User {
+  id           String        @id @default(uuid())
+  email        String        @unique @db.VarChar(254)
+  passwordHash String
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  clients      Client[]
+  sessions     Session[]
+  rules        MappingRule[]
+  audit        AuditLog[]    @relation("AuditOwner")
+  auditActions AuditLog[]    @relation("AuditActor")
+  reviews      TransactionReview[]
+
+  @@map("users")
+}
+
+model Session {
+  tokenHash String   @id @db.Char(64)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId, expiresAt])
+  @@map("sessions")
+}
+
+model LoginAttempt {
+  key       String   @id @db.Char(64)
+  attempts  Int
+  updatedAt DateTime @updatedAt
+
+  @@map("login_attempts")
+}
+
+model Client {
+  id                String   @id @default(uuid())
+  ownerId           String
+  owner             User     @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  name              String   @db.VarChar(160)
+  metadata          String   @default("") @db.VarChar(1000)
+  fallbackAccount   String   @default("Ask my Accountant") @db.VarChar(240)
+  active            Boolean  @default(true)
+  chartImportedAt   DateTime?
+  chartSource       String?  @db.VarChar(200)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  bankAccounts      BankAccount[]
+  rules             MappingRule[]
+  accounts          QuickbooksAccount[]
+  audit             AuditLog[]
+
+  @@index([ownerId, name])
+  @@map("clients")
+}
+
+model BankAccount {
+  id                String   @id @default(uuid())
+  clientId          String
+  client            Client   @relation(fields: [clientId], references: [id], onDelete: Restrict)
+  bankName          String   @db.VarChar(120)
+  displayName       String   @db.VarChar(120)
+  accountLast4      String   @db.Char(4)
+  qbBankAccount     String   @db.VarChar(240)
+  currency          String   @default("USD") @db.Char(3)
+  active            Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  files             UploadedFile[]
+  statements        Statement[]
+  rules             MappingRule[]
+  ledgers           LedgerSnapshot[]
+
+  @@unique([clientId, qbBankAccount])
+  @@index([clientId, active])
+  @@map("bank_accounts")
+}
+
+model UploadedFile {
+  id            String      @id @default(uuid())
+  bankAccountId String
+  bankAccount   BankAccount @relation(fields: [bankAccountId], references: [id], onDelete: Restrict)
+  storageKey    String      @unique
+  originalName  String      @db.VarChar(200)
+  sha256        String      @db.Char(64)
+  byteSize      Int
+  createdAt     DateTime    @default(now())
+  job           ImportJob?
+
+  @@unique([bankAccountId, sha256])
+  @@map("uploaded_files")
+}
+
+model ImportJob {
+  id            String       @id @default(uuid())
+  fileId        String       @unique
+  file          UploadedFile @relation(fields: [fileId], references: [id], onDelete: Restrict)
+  state         JobState     @default(QUEUED)
+  progress      Int          @default(0)
+  attempts      Int          @default(0)
+  errorCode     String?
+  message       String?
+  leaseToken    String?
+  leaseUntil    DateTime?
+  statement     Statement?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  finishedAt    DateTime?
+
+  @@index([state, leaseUntil, createdAt])
+  @@map("import_jobs")
+}
+
+model ParserProfile {
+  id          String      @id @db.VarChar(80)
+  name        String
+  version     Int
+  createdAt   DateTime    @default(now())
+  statements  Statement[]
+
+  @@map("parser_profiles")
+}
+
+model Statement {
+  id                  String        @id @default(uuid())
+  jobId               String        @unique
+  job                 ImportJob     @relation(fields: [jobId], references: [id], onDelete: Restrict)
+  bankAccountId       String
+  bankAccount         BankAccount   @relation(fields: [bankAccountId], references: [id], onDelete: Restrict)
+  parserId            String
+  parser              ParserProfile @relation(fields: [parserId], references: [id], onDelete: Restrict)
+  detectedBank        String?       @db.VarChar(160)
+  detectedLast4       String?       @db.Char(4)
+  periodStart         String?       @db.VarChar(10)
+  periodEnd           String?       @db.VarChar(10)
+  originalSummary     Json
+  summary             Json
+  extractionIssues    Json
+  issueResolution     String?       @db.VarChar(1000)
+  revision            Int           @default(1)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+  pages               StatementPage[]
+  transactions        Transaction[]
+  reconciliations     ReconciliationResult[]
+  exports             ExportBatch[]
+  audit               AuditLog[]
+
+  @@index([bankAccountId, periodStart, periodEnd])
+  @@map("statements")
+}
+
+model StatementPage {
+  id          String    @id @default(uuid())
+  statementId String
+  statement   Statement @relation(fields: [statementId], references: [id], onDelete: Restrict)
+  number      Int
+  rotation    Int
+  width       Float
+  height      Float
+  orientation String
+  text        String
+  tables      Json
+  createdAt   DateTime  @default(now())
+
+  @@unique([statementId, number])
+  @@map("statement_pages")
+}
+
+model Transaction {
+  id                    String       @id @default(uuid())
+  statementId           String
+  statement             Statement    @relation(fields: [statementId], references: [id], onDelete: Restrict)
+  position              Int
+  original              Json
+  originalDescription   String
+  normalizedDescription String
+  statementDate         String?      @db.VarChar(10)
+  qbDate                String?      @db.VarChar(10)
+  writtenDate           String?      @db.VarChar(10)
+  direction             Direction?
+  amount                Decimal?     @db.Decimal(18, 2)
+  runningBalance        Decimal?     @db.Decimal(18, 2)
+  category              Category
+  checkNumber           String?      @db.VarChar(60)
+  reference             String?      @db.VarChar(120)
+  section               String?      @db.VarChar(100)
+  sourcePage            Int
+  sourceBounds          Json
+  action                ImportAction
+  decision              ReviewDecision @default(AUTO)
+  verified              Boolean      @default(false)
+  factIssues            Json
+  validationNotes       Json
+  fingerprint           String?      @db.Char(64)
+  identityKey           String?      @db.Char(64)
+  duplicateOverride     String?      @db.VarChar(300)
+  priorMatchId          String?
+  priorMatch            PriorQuickbooksTransaction? @relation(fields: [priorMatchId], references: [id], onDelete: Restrict)
+  version               Int          @default(1)
+  exportedAt            DateTime?
+  createdAt             DateTime     @default(now())
+  updatedAt             DateTime     @updatedAt
+  mapping               AccountMapping?
+  reviews               TransactionReview[]
+  exportItems           ExportBatchItem[]
+
+  @@unique([statementId, position])
+  @@index([statementId, action])
+  @@index([fingerprint])
+  @@index([identityKey])
+  @@map("transactions")
+}
+
+model MappingRule {
+  id           String      @id @default(uuid())
+  ownerId      String
+  owner        User        @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  clientId     String?
+  client       Client?     @relation(fields: [clientId], references: [id], onDelete: Restrict)
+  bankAccountId String?
+  bankAccount   BankAccount? @relation(fields: [bankAccountId], references: [id], onDelete: Restrict)
+  scope        RuleScope
+  direction    Direction
+  category     Category?
+  pattern      String      @db.VarChar(300)
+  method       MatchMethod
+  qbType       QBType
+  qbName       String      @default("") @db.VarChar(240)
+  splitAccount String      @db.VarChar(240)
+  memo         String      @default("") @db.VarChar(500)
+  priority     Int         @default(0)
+  active       Boolean     @default(true)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  decisions    AccountMapping[]
+
+  @@index([ownerId, active, scope])
+  @@index([clientId, bankAccountId])
+  @@map("mapping_rules")
+}
+
+model AccountMapping {
+  transactionId String      @id
+  transaction   Transaction @relation(fields: [transactionId], references: [id], onDelete: Restrict)
+  ruleId        String?
+  rule          MappingRule? @relation(fields: [ruleId], references: [id], onDelete: Restrict)
+  source        MappingSource
+  qbType        QBType
+  qbName        String      @default("") @db.VarChar(240)
+  splitAccount  String?     @db.VarChar(240)
+  splits        Json
+  memo          String      @default("") @db.VarChar(500)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@map("account_mappings")
+}
+
+model QuickbooksAccount {
+  id          String   @id @default(uuid())
+  clientId    String
+  client      Client   @relation(fields: [clientId], references: [id], onDelete: Restrict)
+  name        String   @db.VarChar(240)
+  type        String?  @db.VarChar(120)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([clientId, name])
+  @@index([clientId, active])
+  @@map("quickbooks_accounts")
+}
+
+model LedgerSnapshot {
+  id             String      @id @default(uuid())
+  bankAccountId  String
+  bankAccount    BankAccount @relation(fields: [bankAccountId], references: [id], onDelete: Restrict)
+  originalName   String      @db.VarChar(200)
+  sha256         String      @db.Char(64)
+  asOf           String?     @db.VarChar(10)
+  closingBalance Decimal?    @db.Decimal(18, 2)
+  createdAt      DateTime    @default(now())
+  rows           PriorQuickbooksTransaction[]
+
+  @@index([bankAccountId, createdAt])
+  @@map("ledger_snapshots")
+}
+
+model PriorQuickbooksTransaction {
+  id           String       @id @default(uuid())
+  ledgerId     String
+  ledger       LedgerSnapshot @relation(fields: [ledgerId], references: [id], onDelete: Restrict)
+  position     Int
+  type         String       @db.VarChar(80)
+  date         String       @db.VarChar(10)
+  number       String?      @db.VarChar(120)
+  name         String       @db.VarChar(240)
+  memo         String       @db.VarChar(500)
+  cleared      Boolean?
+  split        String       @db.VarChar(240)
+  amount       Decimal      @db.Decimal(18, 2)
+  direction    Direction
+  balance      Decimal?     @db.Decimal(18, 2)
+  original     Json
+  matches      Transaction[]
+  createdAt    DateTime     @default(now())
+
+  @@unique([ledgerId, position])
+  @@index([ledgerId, number, amount])
+  @@map("prior_quickbooks_transactions")
+}
+
+model TransactionReview {
+  id            String      @id @default(uuid())
+  transactionId String
+  transaction   Transaction @relation(fields: [transactionId], references: [id], onDelete: Restrict)
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Restrict)
+  before        Json
+  after         Json
+  createdAt     DateTime    @default(now())
+
+  @@index([transactionId, createdAt])
+  @@map("transaction_reviews")
+}
+
+model ReconciliationResult {
+  id          String               @id @default(uuid())
+  statementId String
+  statement   Statement            @relation(fields: [statementId], references: [id], onDelete: Restrict)
+  revision    Int
+  status      ReconciliationStatus
+  result      Json
+  createdAt   DateTime             @default(now())
+
+  @@unique([statementId, revision])
+  @@map("reconciliation_results")
+}
+
+model ExportBatch {
+  id          String      @id @default(uuid())
+  statementId String
+  statement   Statement   @relation(fields: [statementId], references: [id], onDelete: Restrict)
+  revision    Int
+  format      ExportFormat
+  status      ExportStatus @default(UNKNOWN)
+  filename    String     @db.VarChar(160)
+  sha256      String     @db.Char(64)
+  content     Bytes
+  preview     Json
+  items       ExportBatchItem[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([statementId, createdAt])
+  @@map("export_batches")
+}
+
+model ExportBatchItem {
+  id            String      @id @default(uuid())
+  batchId       String
+  batch         ExportBatch @relation(fields: [batchId], references: [id], onDelete: Restrict)
+  transactionId String
+  transaction   Transaction @relation(fields: [transactionId], references: [id], onDelete: Restrict)
+  identityKey   String?     @db.Char(64)
+  fingerprint   String?     @db.Char(64)
+  transferKey   String?     @db.Char(64)
+  snapshot      Json
+  createdAt     DateTime    @default(now())
+
+  @@unique([batchId, transactionId])
+  @@index([identityKey])
+  @@index([fingerprint])
+  @@index([transferKey])
+  @@map("export_batch_items")
+}
+
+model AuditLog {
+  id          String    @id @default(uuid())
+  ownerId     String
+  owner       User      @relation("AuditOwner", fields: [ownerId], references: [id], onDelete: Restrict)
+  actorId     String?
+  actor       User?     @relation("AuditActor", fields: [actorId], references: [id], onDelete: Restrict)
+  clientId    String?
+  client      Client?   @relation(fields: [clientId], references: [id], onDelete: Restrict)
+  statementId String?
+  statement   Statement? @relation(fields: [statementId], references: [id], onDelete: Restrict)
+  action      String    @db.VarChar(80)
+  subjectId   String?
+  details     Json
+  createdAt   DateTime  @default(now())
+
+  @@index([ownerId, createdAt])
+  @@index([statementId, createdAt])
+  @@map("audit_logs")
+}

@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: bankledger
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+      POSTGRES_DB: bankledger
+    ports: ["127.0.0.1:5434:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bankledger"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    volumes: ["database:/var/lib/postgresql/data"]
+  extractor:
+    build: ./apps/extractor
+    env_file: .env
+    environment:
+      MAX_PDF_PAGES: ${MAX_PDF_PAGES:-100}
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://localhost:8000/health', timeout=3)"]
+      interval: 8s
+      timeout: 4s
+      retries: 10
+    restart: unless-stopped
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    env_file: .env
+    environment: &web_environment
+      DATABASE_URL: postgresql://bankledger:${POSTGRES_PASSWORD}@db:5432/bankledger?schema=public
+      EXTRACTOR_URL: http://extractor:8000
+      FILE_STORAGE_DIR: /app/var/private
+    command: ["sh", "-c", "pnpm db:migrate && pnpm start"]
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on:
+      db: { condition: service_healthy }
+      extractor: { condition: service_healthy }
+    volumes: ["private:/app/var/private"]
+    restart: unless-stopped
+  worker:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    env_file: .env
+    environment: *web_environment
+    command: ["sh", "-c", "pnpm db:migrate && pnpm worker"]
+    depends_on:
+      db: { condition: service_healthy }
+      extractor: { condition: service_healthy }
+    volumes: ["private:/app/var/private"]
+    restart: unless-stopped
+volumes:
+  database:
+  private:

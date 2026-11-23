@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ec">
+  <title>BankLedger Pro — Statement Studio</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/fflate.js"></script>
+  <script defer src="/workbook.js"></script>
+  <script defer src="/spreadsheet.js"></script>
+  <script defer src="/demo.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to statement converter</a>
+  <header class="masthead">
+    <div class="mast-inner">
+      <a class="brand" href="/" aria-label="BankLedger Pro home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>BankLedger<span class="pro"> Pro</span></span>
+      </a>
+      <span class="workspace">Statement Studio</span>
+    </div>
+  </header>
+  <main id="main">
+    <div class="studio">
+      <div class="workbook-card">
+        <h1>Convert bank statements</h1>
+        <p class="lede">Extract transactions from a PDF, reconcile the balances, and download an Excel register for review.</p>
+        <div class="document-flow" aria-hidden="true">
+          <div class="flow-document">
+            <span class="document-fold"></span>
+            <span class="document-line"></span>
+            <span class="document-line short"></span>
+            <span class="document-lines"></span>
+            <span class="document-type">PDF</span>
+          </div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12m-4.75-4.5 4.75 4.5-4.75 4.5"/></svg>
+          </div>
+          <div class="flow-register">
+            <span class="flow-register-title">XLSX</span>
+            <span class="flow-register-grid"></span>
+          </div>
+        </div>
+      </div>
+      <section class="upload-card" aria-labelledby="upload-title">
+        <h2 id="upload-title">Upload your PDF</h2>
+        <p class="upload-detail">Use a searchable PDF or a supported outlined statement.</p>
+        <form id="convert-form">
+          <label class="drop-zone" for="statement" id="drop-zone">
+            <input id="statement" name="statement" type="file" accept=".pdf,application/pdf" aria-describedby="file-help">
+            <span class="drop-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 15V4m-4 4 4-4 4 4M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>
+            </span>
+            <span class="drop-title" id="file-title">Choose a PDF <span>or drag it here</span></span>
+            <span class="drop-note" id="file-help">One PDF · Up to 4 MB and 40 pages</span>
+          </label>
+          <div class="action-row">
+            <button class="primary" id="convert-button" type="submit">Extract transactions <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M3.5 10h12m-4.75-4.5 4.75 4.5-4.75 4.5"/></svg></button>
+            <button class="text-button" id="use-sample" type="button">Use sample PDF</button>
+          </div>
+          <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        </form>
+        <a class="sample-link" href="/sample.pdf">Download sample PDF <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M10 3v9m-3-3 3 3 3-3M5 14v2h10v-2"/></svg></a>
+      </section>
+    </div>
+    <section class="result" id="result" tabindex="-1" aria-labelledby="result-title" hidden>
+      <div class="result-header">
+        <div><h2 id="result-title">Statement review</h2><p id="statement-meta"></p></div>
+        <button class="primary download" id="download" type="button"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M10 3v9m-3-3 3 3 3-3M5 14v2h10v-2"/></svg>Download Excel</button>
+      </div>
+      <div id="summary-grid" class="summary-grid"></div>
+      <div class="reconciliation" id="reconciliation">
+        <strong id="reconciliation-label"></strong>
+        <p id="reconciliation-detail"></p>
+        <ul id="issues"></ul>
+      </div>
+      <section class="workbook-editor" id="workbook-editor" aria-labelledby="workbook-title">
+        <div class="table-heading workbook-heading">
+          <h3 id="workbook-title">Workbook</h3>
+          <div class="workbook-actions">
+            <button class="sheet-action" type="button" id="sheet-undo" disabled>Undo</button>
+            <button class="sheet-action" type="button" id="sheet-redo" disabled>Redo</button>
+            <span id="sheet-changes" role="status" hidden></span>
+          </div>
+        </div>
+        <div class="workbook-surface">
+          <div class="cell-bar">
+            <output id="sheet-address" aria-label="Selected cells">A1</output>
+            <label class="cell-value-label" for="sheet-value">Cell value</label>
+            <textarea id="sheet-value" rows="1" autocomplete="off" spellcheck="false" aria-describedby="sheet-help"></textarea>
+          </div>
+          <div class="sheet-panel" id="sheet-panel" role="tabpanel">
+            <div class="table-wrap">
+              <table class="sheet-grid" id="sheet-grid" role="grid" tabindex="0" aria-multiselectable="true" aria-describedby="sheet-help"></table>
+            </div>
+          </div>
+          <div class="sheet-tabs" id="sheet-tabs" role="tablist" aria-label="Workbook sheets"></div>
+        </div>
+        <p class="sheet-help" id="sheet-help">Double-click a cell or use the value field to edit. Select row and column headings for bulk edits.</p>
+        <p class="sheet-help" id="sheet-export-status" aria-live="polite" hidden></p>
+      </section>
+    </section>
+    <footer class="site-footer">
+      <span>BankLedger Pro</span>
+      <span>Files are processed in memory</span>
+    </footer>
+  </main>
+</body>
+</html>

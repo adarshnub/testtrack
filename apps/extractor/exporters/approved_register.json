@@ -1,0 +1,830 @@
+{
+  "9115eab7c327245e9d4a8902e94b0bee8a15a8daa6f2d68896b50c9c78adf8f2": {
+    "f2f3125834720c0103cffc568160a9e53438651dcaf33cb914fe3dfe278f595b": {
+      "name": "Deposit",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": null
+    },
+    "02189c3ed66b465fb743973db231eaab9afedf324df67a4b630833421158e60d": {
+      "name": null,
+      "split": "St Joseph Enterprises",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "3248e888f4527ec65ba1b261afa8d3f0160c51c255b7a80948a18ac8dedab31e": {
+      "name": null,
+      "split": "St Joseph Enterprises",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "b6179a6d455c032bf88a8c6e64463f6fe01586eda85436a66422de32c2f7bf57": {
+      "name": "Deposit",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": null
+    },
+    "15e58b23c7af578c4f1f75f2ce0af67155625f8af6c03a788434a107053e0f2f": {
+      "name": null,
+      "split": "Lottery 8145",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "fd64c5b5f0eea8aaa05d7f6e47de4cfc41d12e937c568725a18ef32d34b533c2": {
+      "name": "Deposit",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": null
+    },
+    "e789724495f9ae29eb839d3a18f97404ad2682e7140269ddccead964f53c799b": {
+      "name": "Deposit",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": null
+    },
+    "e3dadb1f148b755689a8d3aa8263437a8dd2c8484cb5d676cc233a0ebd86881f": {
+      "name": null,
+      "split": "St Joseph Enterprises",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "f7739e49920b7e373b32c39a182622d8117049bf4772b73f51b85584f98e1e20": {
+      "name": null,
+      "split": "St Joseph Enterprises",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "8428b0652045b5382fb106f53cdaf7f6dbcab2be696547e36dab1181d41da1ea": {
+      "name": null,
+      "split": "St Joseph Enterprises",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "46e1cc0a830f214993ac989d8c8ba2c8771fc88811942aa8b900c7f2025340c9": {
+      "name": "Overdraft Charge",
+      "split": "Bank Service Charges",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "96be5d0cc99fb7c229d42b9af5a79909415cc5f4f9c7e6aaec8807c14fac294f": {
+      "name": null,
+      "split": "St Joseph Enterprises",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "3dc261f13fce58134ac06f4c7f8fca72d029cbf7a1c3c6e87b55bc4d7ccd1d11": {
+      "name": null,
+      "split": "St Joseph Enterprises",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "680588c50dc56473dd50b723072ef11e4026cd68a0e6c2f81a1ce23eb646f5be": {
+      "name": null,
+      "split": "St Joseph Enterprises",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "98ecc89323b57ea5dbc69e9cb6c229d8e2302280da91c270a6b2b9e475ee0d1e": {
+      "name": "Alg Distribution Company",
+      "split": "Rebate Income",
+      "text_split": true,
+      "text_name": true,
+      "height": 22.8
+    },
+    "b956e5dbc46fbef3eec7ee54aa43821dae4d769742c899d01996f74db6b7e05c": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "93c7ebc5f7b5539ac6a02945b93819f5d58888715eae09afee8cc2ec87bec4c1": {
+      "name": "PM USA",
+      "split": "Rebate Income",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "3bd5e509382cb43d6bdd9bf6c6ac1f66ce28f2fe29bc3f7b9c7470fc74ea6335": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "d8288536b9e496e34d9982a7b538cbfca82f95c0187ffc8bbde9a2c4fabf5a96": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "54cf749717ba82b3fd355d898a1aa37849863e1ef2818fa227cd878aaa394db3": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "d1c18f011f859ed683b6b6b1306b84ab537ea336dff501775ddf18cac709d63f": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "8ec133dc9fda89d2262ae7877240d182e694cfb932e594400ca25635a694e83b": {
+      "name": "CDS",
+      "split": "ATM Commission",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "d9f385a57ef75b83dab3112d885a0f619ad3286f87b9cc452a4d57e1e7ed7bb9": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "28687bbbe42bc207727f6955293e01c697c52ad24de140cd8662cdae3c2015e1": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "1c6a7716e7498ee34e80b67464715780f4692d6650766da7ca10d06098d44a0e": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "b62bafdce373fd4a30168e2f2c27bde65aac0b369d9504e60e351e744925db7a": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "2f99567bf38aef3f11e4c934ce9f67b8948db1ecd5d49618b2ac73c35b541781": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "28da94b2d0018dcd4301c37cca85a0e5dabe879a3ffbecc970503681d51304e0": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "88a4ceee199ff27cdbfe1e48d01c6b390a9a2383dbae6a9cdf41505a7d9a43c2": {
+      "name": "Liggett Vector",
+      "split": "Rebate Income",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "f0e3220ae119cec36d5b4143713dd628c93c1eecf89da31f177abc8b641f4b9a": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "aaa8acd31eaa9feec121413c972ba6eaa04da61895a313f705b9e0b429af6feb": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "e14bbf810426e2603a1043913d51bfc0a615010b2ef08e15bb97b892ce49cc67": {
+      "name": "PM USA",
+      "split": "Rebate Income",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "6adf63e055da066ac116cdd307e172a643321dae139bb20bfe5d11d987a6c8f9": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "5d4407f7d3ed58042057dd057f9bada1e329d55b7cb8cea3863ab7eda313d167": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "d0fb8df0aa7b119830c4f196b63f2eb89133d4e91add4a5a14fee148731783b7": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "1a6501e8720a0edb26d94ee8f2a7b9581227cee26f17e1c9f2b71bcd8ef793c5": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "c8a77b0d20a2b9fb6c14c807c520a48f30bb48fa8ae96417c3c6f12ef4d1b6e3": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "70ecaca2350a481caf63181a039fcfd7c37f6e93d83aa9c848d096a1ad6a930b": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "8adf1735832c100a90a0f9f8ab5f8673c08869d9b6182ffad3af450bfe66e751": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "43ebfb706326352bf9579c059e673a2ce14a879ee4b99b4ad5bc2e789d426e9b": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "50bb8899bdd06a8b4203b2ff7e75f910ca558933b89b55c9a9c230a33328cc39": {
+      "name": null,
+      "split": "Payroll Tax",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "41bda71c82e77ce88d069f56255ea1866a1ac2a41bfaf1bc2115e09f3b9fe4a9": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "6b52c4a92b9d76fcd761d035a81a8ed60ada43b869ad18c17dc51a9727d0f147": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "f7786c64b13c3a2a300247a26dcdba035841fb7bcc5af7698e6c7737b7655458": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "5eae8e33044d950e0b65d449ef053add004c92e6d02c7f7eb0981f377b36e823": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "6ab19fa00479760479cdbd5ae626c96d9ac609b4ff3499ec43cd94ff0812163d": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "d1a2049f30f91b12fbd2a06cece6bc9b88d636f17431a33b33aa9d2e618f4244": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "cc8a793d9d29e585c21cfc2812bd1ef2c6d0517b756da661a8e458602f62f877": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "c5568042a5e4a417ed68e598bd6b5023dc5582d5adea79ea1b9f67b786090dd3": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "e9d5d9af732b0c158d16eca634580812a48fdbbb824358e8bdd9c28310b5a585": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "2f5fe913a9639b31669c80a1231d537c967813b084f372a27408a7b21b9020a8": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "59f96fbca7b72c4602b158d7e56728a2d68bb3d7001b139e176fb0d89d9c84d8": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "e9c18eb6738420fdc336f94dc71000b0f76f8518b142996bde7c3c4cf13db9b5": {
+      "name": "PM USA",
+      "split": "Rebate Income",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "f27047cee642c3a42fe46383c55b8d000a2bb99e5f89eccbe48d088c2d97d317": {
+      "name": "EPX ST",
+      "split": "Cash Deposit",
+      "text_split": false,
+      "text_name": false,
+      "height": 22.8
+    },
+    "6337d03ad4ad36c0b6456ae10a8da347fe5a35991ffed4b640eb0b1fbcb4774f": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "230dc19511bc74e69e863667b7cb198b10e79089bfdc51816f8df937a3722ef4": {
+      "name": "Daktronics",
+      "split": "Advertising and Promotion",
+      "text_split": false,
+      "text_name": true,
+      "height": 22.8
+    },
+    "a71abcef005abac5c379ac0978ffef4312d8b8f0e4ec3849c598bbb0735bd9cc": {
+      "name": "USPS",
+      "split": "Postage and Delivery",
+      "text_split": false,
+      "text_name": true,
+      "height": 30.0
+    },
+    "152eb7c74114394f38daa5aeee7f3bdfb8cd0c47e9de9a834f77a70afbd3b440": {
+      "name": "EPX FE",
+      "split": "Merchant Account Fees",
+      "text_split": false,
+      "text_name": true,
+      "height": 22.8
+    },
+    "015a7a5310f22dd5a3c481b999854c7d6f3d15d476f1a7901dab8811de93b83d": {
+      "name": "L&T Accountants",
+      "split": "Professional Fees",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "3c96d9a62ec508c93125b6d55046be9a70f0cb9d353d63f1088bbcfb0d4e8374": {
+      "name": "Mclane",
+      "split": "Merchandise Inventory",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "d9f2bb530f46f46008582cd84d1aecbd8fafb1086fcc484098b39be30354e091": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "ca446bf58d291f831518885d1b40af26fb281b00766a8060fb65ae416f9f2b82": {
+      "name": "Payroll Service",
+      "split": "Payroll Expenses",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "8703be903b0d2daffef16cdadd581cafcfc394d71ce2adf1c5dbb79c337cf8fc": {
+      "name": "Frito Lay",
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": true,
+      "height": 30.0
+    },
+    "4e4a41e84dab5fb9417e02621658e5157aa9e3952971c80a313ddd06046e2c9f": {
+      "name": "GA Dept of AG",
+      "split": "Business License and Permits",
+      "text_split": false,
+      "text_name": true,
+      "height": 22.8
+    },
+    "1800892a3e3da879b8cda326fe9f4b0dd060ab232a25303370e8d9ee1f0b528b": {
+      "name": "Modisoft",
+      "split": "Dues and Subscriptions",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "45721d0b57924bdfbbe8c0130a61361d90599f7c7705140b00d37542e3249413": {
+      "name": "South ELM ST Food",
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": true,
+      "height": 22.8
+    },
+    "2396cfc5956b748481267ce4b896fb2e318f19a2b6e5089d946b8d10468186be": {
+      "name": "Akins Ford",
+      "split": "Automobile Expense",
+      "text_split": false,
+      "text_name": true,
+      "height": 22.8
+    },
+    "8b827810047aa29d011c46d5b78ed72d63d2cc8a17f83e5b5e6b1131fdb49c60": {
+      "name": "City of Commerce",
+      "split": "Utilities",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "bd2896a37e821bf20af14a123190fe70eb6645df1530f736dd151d4b23febfcd": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "6e22cf6b7e4ffa5685a24744d905c261526e8b97d25594e39d12ad73ffe4e9c0": {
+      "name": "USPS",
+      "split": "Postage and Delivery",
+      "text_split": false,
+      "text_name": true,
+      "height": 30.0
+    },
+    "1fe1046b2535205b9527961b5637c0ef9e241aaa5b09e2b148c3b7daad8359c9": {
+      "name": "Waste Pro",
+      "split": "Waste Management Expenses",
+      "text_split": false,
+      "text_name": true,
+      "height": 30.0
+    },
+    "89a0c577e59accee97c22277d52977052d1c7fd025ed5fd37329806524190045": {
+      "name": "Daktronics",
+      "split": "Advertising and Promotion",
+      "text_split": false,
+      "text_name": true,
+      "height": 22.8
+    },
+    "217dded2513114414d79963c63333d51a54741849c2f9f5ab5ec8da649fab510": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "9b632a041e413b3bf7c333b363ef5915d53526c0ece74b631e2d5c0e30b61c45": {
+      "name": "Food Mart",
+      "split": "Merchandise Inventory",
+      "text_split": false,
+      "text_name": true,
+      "height": 30.0
+    },
+    "70673bcdab10490fd016460979643352af5070ef8319931551a007a503349ffa": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "8f8b43381eb82a95d4c96f6d8c177d21cc650ccc185ccb63ee2a5ea34f50953c": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "15a31283208a2e2c035005274cd7f9a010d32866936cac947bc66ff87282081a": {
+      "name": "Matador Distributors",
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "4d3078c6e8b36bf65209f4443a683b8195ed1818aa1cacf8467e05235d770342": {
+      "name": "Daktronics",
+      "split": "Advertising and Promotion",
+      "text_split": false,
+      "text_name": true,
+      "height": 22.8
+    },
+    "170a35fa8f69de8e8e3098d08b00037966c7b59309a5e2ff2076f7ca90cdcf7c": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "bcfb6c142807c2133cb56b0a7c3194bfd0a4dc68dddbb90a2a349e84d43cb6e1": {
+      "name": "Daktronics",
+      "split": "Advertising and Promotion",
+      "text_split": false,
+      "text_name": true,
+      "height": 22.8
+    },
+    "8d10843a3151410e6aafb8fda1d24673eef6644590ebea03612a1553d0582c04": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "334860e2a48a136bc6275325589f6ff63e5b6a8d3c97e2545bd99a30db5865c0": {
+      "name": "Mclane",
+      "split": "Merchandise Inventory",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "114be24d9b6601b3be18f3d273dd6f72abfb1df87a795498161113f4eebf4e7c": {
+      "name": "Windstream",
+      "split": "Computer and Internet Expenses",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "5ee265e713a58b35af3747e504ac24412826e0293a61a1f21626684796a20109": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "601a818bc0fa35415c8064c1fdfee8a3590f847ecb9993ac093034d4e50fd11c": {
+      "name": "Georgia ITS Tax",
+      "split": "Wireless Payments",
+      "text_split": true,
+      "text_name": true,
+      "height": 22.8
+    },
+    "62bdd88b52aecf2f62b3a4a19e3526ba2234a357c105490c9b166705c5cfe5ee": {
+      "name": "Georgia ITS Tax",
+      "split": "Sales Tax Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": 22.8
+    },
+    "4ed37d0bb563ce49138e570f109497e57115bc948981db35b2dbb6bee9b33aa9": {
+      "name": "Frito Lay",
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": true,
+      "height": 30.0
+    },
+    "1c12e4cbcba41c274468ebd0ff8122b9c4d6906f4ea45ca5d70fc782206c7413": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "9ce181c76f7a0a4960d03ffec6b06fc2b92e94ba9f93057ca7be09515bcb3ab7": {
+      "name": "Frito Lay",
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": true,
+      "height": 30.0
+    },
+    "36793d21ca63b63bfa04295e7d92076affc282d49c909d0f1aa349a8116d6e7e": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "55b2678fcc180b76d160a12577a2bbb929d3e9bb699101d53329ae1879d631b7": {
+      "name": "NLP CM Accts Rece",
+      "split": "Gasoline Payable",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "6df53a714af30c1ca7bcdf360747be6db46ccdb720dc49de75ad68583e0b3056": {
+      "name": "Matador Distributors",
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": true,
+      "height": null
+    },
+    "71f945d885e9b57b708a7a9240e978e8eecfe5a4a8a86d9e91e65bad4ec96ef0": {
+      "name": "Mclane",
+      "split": "Merchandise Inventory",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "a5556608e98d3fc2f193244d6bf6930a097862144b79295efccff50152910149": {
+      "name": "Withdrawal",
+      "split": "Cash in Hand",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "e1b7410e7db10546df1ee8b8ab36e4a4902701668b7c2db7832af19cafaee574": {
+      "name": "Withdrawal",
+      "split": "Cash in Hand",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "354a44dd7320ef683209010c4937f482c05568e94534c76ac6f4a776b8338d6b": {
+      "name": null,
+      "split": "Lottery 8145",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "916ce28cfe5e1352499223368e0a5134d9fd93da477d9f39c275fdd70725b192": {
+      "name": "Withdrawal",
+      "split": "Cash in Hand",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "adcb4e04b7592b8669b7ca1ed094c8a59a417c160976b6ac6c506630fc22fd7b": {
+      "name": "Withdrawal",
+      "split": "Cash in Hand",
+      "text_split": false,
+      "text_name": true,
+      "height": null
+    },
+    "6165fce14afcea8e664127d1ab42238c65a62c88c059f37cc32d6042b84ae90e": {
+      "name": null,
+      "split": "Coam 8137",
+      "text_split": true,
+      "text_name": false,
+      "height": 30.0
+    },
+    "c5545648e2a023e30d05ff62a635df953f4dc2b3337bc90594d3ab86d0037e9e": {
+      "name": "Overdraft Charge",
+      "split": "Bank Service Charges",
+      "text_split": false,
+      "text_name": true,
+      "height": 30.0
+    },
+    "0a7c496f5e324aaf4a9b25bd2bd7c0a461f7e57306187ec7f138a948626f04fe": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "d0c16c33ebf6574f5ccad3c8f27c16ca89a7fd58b437d48e8be6fcc8b38e3a03": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "0f1d15c4cf823740a2a3162d00771e00afaed04cec768f53cfeee8b8e77d90d3": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "5d4aa4d198b6a7811fa586d430d131bd6c4af816127f4ae5afd038c0c256ebf7": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "3d126d47821d2f93c2ecf3d7721b04e81ea64730abd0e0674b54b86d539b91ed": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "3b5c5cc76855c951f4c4a7e3ee9014cc371e09e15f5fac45801346c7c0fb5c83": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "33f218b43a7e2be35e408453a63c668b37969361e169beaa8ccb9dfb114b6da0": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "034cd9e1f8d5f78bf3e8f9c4e0951f2a903637ff9d6b109157b4bd9241df8c11": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "d6c8b84f7f77d4ce6e11f6b200db3e4729163c362a97e7253a0e212281723f47": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "351cafefad5c4866304b2db074b93b34528c7bdc065ff8b1c2d02c781e354a8b": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "66ad3958efe678aa60a358e9f122c9215af5af4fdc9fcefb78280d375aa8df76": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "2519793dc4c68cca4ab6b6e0b07e26ebc1a80f2b588b6761a0705a6e4ca699ad": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "126b85049e175ace4df4225a54867927e60c4a07b20421e2a4864460623b3235": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "6d9325388f26dbbde79a1a61576ea36412608a278e87e0c5ebe205822d12da63": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "070320c5fced2360819268d4eb491cf9767166bfc94fcd8601c4e298800879df": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "912200b978b3e6190fbb6d7dee78e442451db909721a48061b301905639d2559": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "aaf146ebaec87fd1fa328e8f3e2eb7de61c7795f6a1a0379be3ef120865f3e74": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": null
+    },
+    "d93d2c7bfed046c8ba0f63438549d3146ae71e2f42183110cc727fba254a453e": {
+      "name": null,
+      "split": "Merchandise Inventory",
+      "text_split": true,
+      "text_name": false,
+      "height": 15.0
+    }
+  }
+}
